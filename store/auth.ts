@@ -44,7 +44,6 @@ export default class Auth extends VuexModule {
 
   @Action
   // For the user to continue with the auth cookie, even after leaving the page:
-
   public update(payload: UpdatePayload) {
     // If token exists in cookies:
     const token = payload?.token ? payload.token : $cookies.get("token");
@@ -55,13 +54,13 @@ export default class Auth extends VuexModule {
   @Action
   // TODO: Check if this is working as it should
   public async destroy() {
-// Undo login/authentication:
-await $axios.delete("/auth");
+    // Undo login/authentication:
+    await $axios.delete("/auth");
 
-    // Delete o cookie do usuário:
+    // Delete the user's cookie:
     $cookies.remove("token");
 
-    // Atualiza o token pra nulo usando a mutation:
+    // Update token to bolo using mutation:
     this.context.commit("UPDATE_TOKEN", null);
   }
 }

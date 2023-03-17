@@ -1,6 +1,5 @@
 <template>
   <div>
-
     <div>
       <!-- <img class="logo" src="@/assets/img/facebook-logo.svg" alt="" /> -->
       <div>
@@ -8,7 +7,7 @@
         <h2>Entre na sua conta</h2>
       </div>
 
-      <LoginForm />s
+      <LoginForm />
     </div>
   </div>
 </template>
