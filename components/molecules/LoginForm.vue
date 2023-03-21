@@ -4,7 +4,7 @@
       <img
         class="w-auto h-12 mx-auto"
         src="@/assets/searchandstay.png"
-        alt="Workflow"
+        alt="Search and stay logo"
       />
       <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-900">
         Sign in to your account
@@ -88,24 +88,6 @@ export default Vue.extend({
         this.$router.push("/");
       } catch (error) {
         console.log(error);
-
-        this.$notify({
-          type: "error",
-          text: "❌ Oops.. something went wrong❗ 😵😕",
-        });
-
-        // if (response.data.errors[0].message === "required validation failed") {
-        //   this.$notify({
-        //     type: "error",
-        //     text: "❌ Por favor preencha todos os campos corretamente!",
-        //   });
-        // }
-        // if (response.data.errors[0].message === "Invalid user credentials") {
-        //   this.$notify({
-        //     type: "warn",
-        //     text: "⚠ Dados incorretos! 🤨",
-        //   });
-        // }
       }
     },
   },

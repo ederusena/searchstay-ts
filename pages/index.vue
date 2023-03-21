@@ -2,7 +2,15 @@
   <div class="flex items-center justify-center w-full font-sans h-100">
     <div class="w-full p-6 m-4 bg-white rounded shadow lg:w-3/4 lg:max-w-lg">
       <div class="mb-4">
-        <h1 class="text-grey-900">Todo List</h1>
+        <div class="flex justify-between">
+          <h1 class="text-grey-900">Todo List</h1>
+          <button
+            class="p-2 border-2 rounded flex-no-shrink text-teal border-teal hover:text-white hover:bg-teal"
+            @click.prevent="handleLogout()"
+          >
+            Logout
+          </button>
+        </div>
         <div class="flex mt-4">
           <input
             class="w-full px-3 py-2 mr-4 border rounded shadow appearance-none text-grey-800"
@@ -68,7 +76,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { tasks } from "@/store";
+import { tasks, auth } from "@/store";
 import { Task } from "@/models";
 export default Vue.extend({
   name: "IndexPage",
@@ -93,6 +101,10 @@ export default Vue.extend({
       this.active = true;
       this.modalId = id;
       this.modalName = name;
+    },
+    handleLogout() {
+      auth.destroy();
+      this.$router.push("/login");
     },
     async doneTask(id: number, active: number, name: string) {
       tasks.updateActiveTask(active);

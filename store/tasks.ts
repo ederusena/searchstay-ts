@@ -84,7 +84,7 @@ export default class Tasks extends VuexModule {
     await $axios.$put(`/house_rules/${id}`, {
       house_rules: {
         name: this.newTaskName,
-        active: 0,
+        active: 1,
       },
     });
 

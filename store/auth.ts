@@ -52,15 +52,8 @@ export default class Auth extends VuexModule {
   }
 
   @Action
-  // TODO: Check if this is working as it should
   public async destroy() {
-    // Undo login/authentication:
-    await $axios.delete("/auth");
-
-    // Delete the user's cookie:
     $cookies.remove("token");
-
-    // Update token to bolo using mutation:
     this.context.commit("UPDATE_TOKEN", null);
   }
 }
