@@ -31,7 +31,7 @@ export default class Auth extends VuexModule {
   public async create(payload: Login) {
     const {
       data: { result },
-    } = await $axios.$post("/admin/login_json", payload);
+    } = await $axios.$post("/login_json", payload);
 
     $cookies.set("token", result.access_token, {
       path: "/",

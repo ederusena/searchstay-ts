@@ -14,6 +14,6 @@ export const actions: ActionTree<RootState, RootState> = {
   async nuxtServerInit({ dispatch }) {
     // Saves the authenticated user's token even if he reloads the page:
     dispatch("auth/update"); // moduleName/moduleMethodName
-    await dispatch("tasks/show");
+    // await dispatch("tasks/list");
   },
 };

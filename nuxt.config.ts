@@ -13,33 +13,22 @@ export default {
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
 
-  css: [
-    "normalize.css/normalize.css",
-    "@/assets/css/main.css"
-  ],
+  css: ["./assets/css/main.css", '@fortawesome/fontawesome-svg-core/styles.css'],
 
   plugins: [
-    '@/plugins/axios-accessor',
-    '@/plugins/notifications.client',
-    '@/plugins/axios'
+    "@/plugins/axios-accessor",
+    "@/plugins/axios",
+    '@/plugins/fontawesome'
   ],
 
-  components: [
-    { path: "@/components/", pathPrefix: false }
-  ],
+  components: [{ path: "@/components/", pathPrefix: false }],
 
-  buildModules: [
-    "@nuxt/typescript-build"
-  ],
+  buildModules: ["@nuxt/typescript-build"],
 
-  modules: [
-    "@nuxtjs/axios",
-    "cookie-universal-nuxt",
-  ],
+  modules: ["@nuxtjs/axios", "cookie-universal-nuxt"],
 
   axios: {
-    baseUrl: 
-      process.env.BASE_URL,
+    baseUrl: process.env.BASE_URL,
   },
 
   build: {
